@@ -22,15 +22,19 @@ export default function FAQ({ item }) {
             >
               {element.title}
             </button>
-            {open === element.id && (
-              <div className="card p-3 mt-2">
-                <h5>{element.title}</h5>
-                <div>{element.description}</div>
-              </div>
-            )}
           </div>
         ))}
       </div>
+
+      {item.map(
+        (element) =>
+          open === element.id && (
+            <div key={element.id} className="card p-3 mt-2">
+              <h4>{element.title}</h4>
+              <p>{element.description}</p>
+            </div>
+          )
+      )}
     </div>
   );
 }
