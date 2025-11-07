@@ -7,7 +7,7 @@ import faqs from "./data/languages.js";
 function App() {
   return (
     <>
-      <FAQ item={faqs} />
+      <FAQ items={faqs} />
     </>
   );
 }
