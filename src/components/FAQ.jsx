@@ -8,9 +8,7 @@ export default function FAQ({ items }) {
   }
 
   return (
-    <div>
-      <h2>Learn Web Development</h2>
-
+    <>
       <div className="d-flex gap-2">
         {items.map((item) => (
           <div key={item.id} className="mb-3">
@@ -35,6 +33,6 @@ export default function FAQ({ items }) {
             </div>
           )
       )}
-    </div>
+    </>
   );
 }
