@@ -1,3 +1,5 @@
+import Buttons from "./Buttons";
+import Card from "./Card";
 import { useState } from "react";
 
 export default function FAQ({ items }) {
@@ -9,30 +11,8 @@ export default function FAQ({ items }) {
 
   return (
     <>
-      <div className="d-flex gap-2">
-        {items.map((item) => (
-          <div key={item.id}>
-            <button
-              className={`mb-4 btn ${
-                open === item.id ? "btn-warning" : "btn-primary"
-              }`}
-              onClick={() => toggleFaq(item.id)}
-            >
-              {item.title}
-            </button>
-          </div>
-        ))}
-      </div>
-
-      {items.map(
-        (item) =>
-          open === item.id && (
-            <div key={item.id} className="card p-3 mt-2">
-              <h4>{item.title}</h4>
-              <p className="mb-0">{item.description}</p>
-            </div>
-          )
-      )}
+      <Buttons items={items} open={open} toggleFaq={toggleFaq} />
+      <Card items={items} open={open} />
     </>
   );
 }
