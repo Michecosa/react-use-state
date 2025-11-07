@@ -11,7 +11,7 @@ export default function FAQ({ items }) {
     <>
       <div className="d-flex gap-2">
         {items.map((item) => (
-          <div key={item.id} className="mb-3">
+          <div key={item.id}>
             <button
               className={`mb-4 btn ${
                 open === item.id ? "btn-warning" : "btn-primary"
